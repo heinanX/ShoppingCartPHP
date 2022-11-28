@@ -15,16 +15,19 @@ class Product
         $this->inStock = $inStock; 
     }
 
-      function getId() {
+    function getId() {
         return $this->id;
-      }
-      function getTitle() {
+    }
+
+    function getTitle() {
         return $this->title;
-      }
-      function getPrice() {
+    }
+
+    function getPrice() {
         return $this->price;
-      }
-      function getInStock() {
+    }
+    
+    function getInStock() {
         return $this->inStock;
     }
 

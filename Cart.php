@@ -5,6 +5,9 @@ class Cart
 {
     private array $items = [];
 
+    function getItems() {
+        return $this->items;
+    }
     //TODO Skriv getter för items
 
     /*
