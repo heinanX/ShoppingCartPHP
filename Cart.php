@@ -5,10 +5,11 @@ class Cart
 {
     private array $items = [];
 
+    //TODO Skriv getter för items
     function getItems() {
         return $this->items;
     }
-    //TODO Skriv getter för items
+  
 
     /*
      Skall lägga till en produkt i kundvagnen genom att
@@ -20,6 +21,10 @@ class Cart
      */
     public function addProduct($product)
     {
+        $cartItem = new CartItem($product); 
+        // $this->product = $product;
+        // $this->quantity = $quantity;
+
     }
 
 
