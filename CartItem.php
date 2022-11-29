@@ -19,7 +19,9 @@ class CartItem
     }
 
     function getQuantity() {
+        
         return $this->quantity;
+
     }
 
     //VG: Skall utöka antalet på ett cartItem med 1. 

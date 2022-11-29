@@ -19,10 +19,10 @@ class Cart
      VG: Om produkten redan finns i kundvagnen
      skall istället quantity på cartitem ökas.
      */
-    public function addProduct($product)
+    public function addProduct($product,$quantity)
     {
-        // var_dump($this->items);
-        $cartItem = new CartItem($product, 1);
+        var_dump($product);
+        $cartItem = new CartItem($product, $quantity);
         // var_dump($cartItem);
         $this->items[$product->getId()] = $cartItem;
         // var_dump($cartItem);
@@ -41,7 +41,25 @@ class Cart
     //OBS: Ej antalet unika produkter
     public function getTotalQuantity()
     {
-        var_dump($this->items);
+        
+        foreach($this->items as $objects) {
+            
+            $quantity = $objects->getQuantity();
+            
+            var_dump ($quantity);
+            // foreach($quantity as $num) {
+            //     $q =+ $num ;
+            //     echo $q;
+
+                
+                
+            // }
+            
+        }
+
+        // $newArr = $this->items[1];
+        // return $newArr;
+        // var_dump($theShit);
         // $array = $this->items[];
         // return count($this->items);
     }
