@@ -21,9 +21,12 @@ class Cart
      */
     public function addProduct($product)
     {
-        $cartItem = new CartItem($product); 
-        // $this->product = $product;
-        // $this->quantity = $quantity;
+        // var_dump($this->items);
+        $cartItem = new CartItem($product, 1);
+        // var_dump($cartItem);
+        $this->items[$product->getId()] = $cartItem;
+        // var_dump($cartItem);
+        return $cartItem;
 
     }
 
@@ -31,17 +34,24 @@ class Cart
     //Skall ta bort en produkt ur kundvagnen (använd unset())
     public function removeProduct($product)
     {
+        unset($this->items[$product->getId()]);
     }
 
     //Skall returnera totala antalet produkter i kundvagnen
     //OBS: Ej antalet unika produkter
     public function getTotalQuantity()
     {
+        var_dump($this->items);
+        // $array = $this->items[];
+        // return count($this->items);
     }
 
     //Skall räkna ihop totalsumman för alla produkter i kundvagnen
     //VG: Tänk på att ett cartitem kan ha olika quantity
     public function getTotalSum()
     {
+        
+    //    $sum =  $this->item[quantity];
+        // return $sum;
     }
 }
