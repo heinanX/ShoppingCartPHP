@@ -14,9 +14,9 @@ $product3 = new Product(3, "Samsung Galaxy S20", 3200, 10);
 $cart = new Cart();
 
 //Lägger till 3 produkter i kundvagnen
-$cartItem1 = $cart->addProduct($product1, 5);
-$cartItem2 = $cart->addProduct($product2, 3);
-$cartItem3 = $cart->addProduct($product3, 4);
+$cartItem1 = $cart->addProduct($product1, 1);
+$cartItem2 = $cart->addProduct($product2, 1);
+$cartItem3 = $cart->addProduct($product3, 1);
 
 //Skriver ut namn på produkter i kundvagnen
 echo "<h3>Produkter i kundvagnen:</h3>";
@@ -74,17 +74,17 @@ Antal: 1
 */
 
 //Kommentera in nedan kod om du satsar på VG
-// echo "<h3>Namn och kvantitet på alla items i kundvagnen: </h3>";
+echo "<h3>Namn och kvantitet på alla items i kundvagnen: </h3>";
 
-// foreach ($cart->getItems() as $item) {
-//     $cartItemName = $item->getProduct()->getTitle();
-//     $cartItemQuantity = $item->getQuantity();
+foreach ($cart->getItems() as $item) {
+    $cartItemName = $item->getProduct()->getTitle();
+    $cartItemQuantity = $item->getQuantity();
 
-//     echo "<p>Titel: $cartItemName</p>";
-//     echo "<p>Antal: $cartItemQuantity</p>";
-//     echo "-------------------------<br><br>";
-// }
+    echo "<p>Titel: $cartItemName</p>";
+    echo "<p>Antal: $cartItemQuantity</p>";
+    echo "-------------------------<br><br>";
+}
 
 
-// echo "<h3>Lägger till en fjärde M2 SSD fast det bara finns 3 i lager: </h3>";
-// $cartItem2->increaseQuantity(); //Skall skriva ut "Kan inte lägga till. Slut i lager"
+echo "<h3>Lägger till en fjärde M2 SSD fast det bara finns 3 i lager: </h3>";
+$cartItem2->increaseQuantity(); //Skall skriva ut "Kan inte lägga till. Slut i lager"

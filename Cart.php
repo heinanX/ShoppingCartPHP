@@ -23,9 +23,7 @@ class Cart
     {
         
         $cartItem = new CartItem($product, $quantity);
-        // var_dump($cartItem);
         $this->items[$product->getId()] = $cartItem;
-        // array_push($this->items,$cartItem);
         return $cartItem;
     }
 
