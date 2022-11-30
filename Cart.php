@@ -26,7 +26,6 @@ class Cart
         // var_dump($cartItem);
         $this->items[$product->getId()] = $cartItem;
         // array_push($this->items,$cartItem);
-        var_dump($this->items);
         return $cartItem;
     }
 
@@ -45,25 +44,23 @@ class Cart
         foreach($this->items as $objects) {
             
             array_push($quantity,$objects->getQuantity());
-            // return array_sum($quantity);
-            //  return $quantity;
         }
-        var_dump ($quantity);
+    
         return array_sum($quantity);
-
-        // $newArr = $this->items[1];
-        // return $newArr;
-        // var_dump($theShit);
-        // $array = $this->items[];
-        // return count($this->items);
     }
 
     //Skall räkna ihop totalsumman för alla produkter i kundvagnen
     //VG: Tänk på att ett cartitem kan ha olika quantity
     public function getTotalSum()
     {
+        $totalSum = [];
+        foreach($this->items as $objects) {
+            $product = $objects->getProduct();
+            $price = $product -> getPrice();
+            $sum = $objects -> getQuantity() * $price;
+            array_push($totalSum, $sum);
+        }
         
-    //    $sum =  $this->item[quantity];
-        // return $sum;
+        return array_sum($totalSum);
     }
 }
