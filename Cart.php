@@ -21,13 +21,13 @@ class Cart
      */
     public function addProduct($product,$quantity)
     {
-        var_dump($product);
+        
         $cartItem = new CartItem($product, $quantity);
         // var_dump($cartItem);
         $this->items[$product->getId()] = $cartItem;
-        // var_dump($cartItem);
+        // array_push($this->items,$cartItem);
+        var_dump($this->items);
         return $cartItem;
-
     }
 
 
@@ -41,21 +41,15 @@ class Cart
     //OBS: Ej antalet unika produkter
     public function getTotalQuantity()
     {
-        
+        $quantity = [];
         foreach($this->items as $objects) {
             
-            $quantity = $objects->getQuantity();
-            
-            var_dump ($quantity);
-            // foreach($quantity as $num) {
-            //     $q =+ $num ;
-            //     echo $q;
-
-                
-                
-            // }
-            
+            array_push($quantity,$objects->getQuantity());
+            // return array_sum($quantity);
+            //  return $quantity;
         }
+        var_dump ($quantity);
+        return array_sum($quantity);
 
         // $newArr = $this->items[1];
         // return $newArr;
