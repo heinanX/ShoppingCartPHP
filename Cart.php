@@ -21,7 +21,6 @@ class Cart
      */
     public function addProduct($product,$quantity)
     {
-        
         $cartItem = new CartItem($product, $quantity);
         $this->items[$product->getId()] = $cartItem;
         return $cartItem;
@@ -39,11 +38,10 @@ class Cart
     public function getTotalQuantity()
     {
         $quantity = [];
+
         foreach($this->items as $objects) {
-            
             array_push($quantity,$objects->getQuantity());
         }
-    
         return array_sum($quantity);
     }
 
@@ -52,13 +50,13 @@ class Cart
     public function getTotalSum()
     {
         $totalSum = [];
+
         foreach($this->items as $objects) {
             $product = $objects->getProduct();
             $price = $product -> getPrice();
             $sum = $objects -> getQuantity() * $price;
             array_push($totalSum, $sum);
         }
-        
         return array_sum($totalSum);
     }
 }
