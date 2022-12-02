@@ -21,11 +21,22 @@ class Cart
      */
     public function addProduct($product,$quantity)
     {
-        $cartItem = new CartItem($product, $quantity);
-        $this->items[$product->getId()] = $cartItem;
-        return $cartItem;
-    }
+        
+        $foundItem = $this->items[$product->getId()] ?? null;
 
+        var_dump($foundItem) ;
+        if ($foundItem === null) {
+            $cartItem = new CartItem($product, $quantity);
+            $this->items[$product->getId()] = $cartItem;
+            return $cartItem;
+        } 
+        else { 
+            // $this->items[$product->getId()] = "AAAAAAAAAAAAAAAA";
+            $quantity = +1;
+
+        }
+        // return $cartItem;
+    }
 
     //Skall ta bort en produkt ur kundvagnen (använd unset())
     public function removeProduct($product)
