@@ -16,7 +16,6 @@ $cart = new Cart();
 //Lägger till 3 produkter i kundvagnen
 //$cartItem1 = $cart->addProduct($product1, 1);
 $cartItem1 = $cart->addProduct($product1, 1);
-
 $cartItem2 = $cart->addProduct($product2, 1);
 $cartItem3 = $cart->addProduct($product3, 1);
 

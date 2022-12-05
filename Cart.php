@@ -33,7 +33,6 @@ class Cart
         print_r($this->items);
         return $cartItem;    
     }
-    
 
     //Skall ta bort en produkt ur kundvagnen (använd unset())
     public function removeProduct($product)
