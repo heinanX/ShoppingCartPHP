@@ -30,7 +30,7 @@ class Cart
             $cartItem -> increaseQuantity();
             return $cartItem;
         }
-        print_r($this->items);
+
         return $cartItem;    
     }
 
